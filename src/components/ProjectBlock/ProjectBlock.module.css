@@ -10,6 +10,8 @@
 	color: white;
 	margin-top: 100px;
 	margin-bottom: 20px;
+	
+
 }
 
 .projectImage {
@@ -17,8 +19,19 @@
 	background-position: center center;
 	background-size: cover;
 
+	width: 1px;
+	height: 0px;
+	
+	transition: height 0.3s ease-in-out , width 0.3s ease-in-out 0.4s;
+	
+	
+}
+
+.imageAnimation{
+	
 	width: 500px;
 	height: 250px;
+	
 }
 
 .projectInfo {
@@ -26,6 +39,9 @@
 	height: 100%;
 
 	width: 450px;
+	
+	
+	
 }
 
 .projectNameContainer {
@@ -34,7 +50,7 @@
 	font-weight: bold;
 	padding-top: 20px;
 	overflow: hidden;
-	width: 95%;
+	width: 100%;
 }
 
 .projectName {
@@ -46,10 +62,14 @@
 
 .projectDescription {
 	margin-top: 20px;
-	width: 420px;
+	width: 100%;
 }
 
 .technologiesContainer {
+	height: 30px;
+	display: flex;
+	column-gap: 15px;
+	align-items: center;
 }
 
 .buttonsContainer {
@@ -114,15 +134,43 @@
 
 
 
-.floatDivRight{
+.DivRight{
 	right: 0px;
+	
+}
+
+.DivLeft{
+
+left: 0px;
+}
+
+.floatDivRight{
+	float: right;
 
 }
+
+
 
 .floatDivLeft{
-right: 50%;
+float: left;
+
 }
 
+.textAlignRight{
+	text-align: right;
+
+}
+.textAlignLeft{
+	text-align: left;
+}
+
+.textAlignCenter{
+	text-align: center;
+}
+
+.flexDirectionReverse{
+	flex-direction: row-reverse;
+}
 .mobileOverlay{
 	display: none;
 }
@@ -139,6 +187,11 @@ right: 50%;
 
 		background-size: cover;
 
+		
+	}
+
+	.imageAnimation{
+	
 		width: 100%;
 		height: 100%;
 	}
@@ -168,13 +221,13 @@ right: 50%;
 	.technologiesContainer {
 		position: relative;
 		width: 100%;
-		
+	
 		height: 50px;
 	}
 
 	.buttonsContainer {
 		position: relative;
-		top: 50px;
+		
 		display: flex;
 		font-family: "Open Sans";
 		font-weight: 600;
@@ -188,12 +241,12 @@ right: 50%;
 		background-color: rgba(31, 31, 31, 0.712);
 	}
 
-	.floatDivRight{
+	.DivRight{
 		right: unset;
 	
 	}
 	
-	.floatDivLeft{
+	.DivLeft{
 	right: unset;
 	}
 }
