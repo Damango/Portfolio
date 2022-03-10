@@ -24,7 +24,7 @@
 	
 	transition: height 0.3s ease-in-out , width 0.3s ease-in-out 0.4s;
 	
-	
+
 }
 
 .imageAnimation{
@@ -179,7 +179,7 @@ float: left;
 @media only screen and (max-width: 600px) {
 	.container {
 		width: 80%;
-		background-color: teal;
+		
 		padding: 0px;
 	}
 	.projectImage {
@@ -235,18 +235,14 @@ float: left;
 
 	.mobileOverlay{
 		position: absolute;
+		left: 0px;
 		display: inline-block;
 		width: 100%;
 		height: 100%;
-		background-color: rgba(31, 31, 31, 0.712);
+		background-color: rgba(4, 3, 26, 0.863);
 	}
 
-	.DivRight{
-		right: unset;
-	
-	}
-	
-	.DivLeft{
-	right: unset;
-	}
+
+
+
 }

@@ -14,7 +14,10 @@ const ProjectBlock = (props) => {
 	//References to animated elements
 	const projectDescriptionRef = useRef(null);
 	const projectNameRef = useRef(null);
-	const projectImageRef = useRef(null)
+	const projectImageRef = useRef(null);
+	const projectInfoRef = useRef(null)
+	const techContainerRef = useRef(null)
+
 
 	//View port controller
 	const { inViewport, enterCount, leaveCount } = useInViewport(
@@ -25,100 +28,40 @@ const ProjectBlock = (props) => {
 	//Classes change variables
 
 
-	useEffect(() => { }, []);
-	let projectInfoClasses = () => {
+	useEffect(() => {
+		alignProjectBlock()
+	}, []);
 
-		if (props.index % 2 === 0 || props.index % 2 === Infinity) {
-			return (styles.projectInfo + " " + styles.DivLeft)
-		}
-		else {
-			return (styles.projectInfo + " " + styles.DivRight)
-		}
-
-	}
-
-
-
-	let projectImageClasses;
-
-
-
-
-
-	let projectNameClasses = () => {
-		if (props.index % 2 === 0 || props.index % 2 === Infinity) {
-			return (styles.projectName + " " + styles.textAlignLeft)
-		}
-		else {
-
-			return (styles.projectName + " " + styles.textAlignRight)
-		}
-	}
-
-
-
-
-
-
-
-
-	let techContainerClasses = () => {
-		if (props.index % 2 === 0 || props.index % 2 === Infinity) {
-			return (styles.technologiesContainer)
-		}
-		else {
-
-			return (styles.technologiesContainer + " " + styles.flexDirectionReverse)
-		}
-	}
-
-
-
-
-	let projectDescriptionClasses = () => {
-		if (props.index % 2 === 0 || props.index % 2 === Infinity) {
-			return (styles.projectDescription + " " + styles.textAlignLeft)
-		}
-		else {
-
-			return (styles.projectDescription + " " + styles.textAlignRight)
-		}
-	}
 
 	let projectButtonsStyle = {
 		float: (props.index + 1) % 2 === 0 ? "right" : "left",
 	};
 
+	// USE THIS FUNCTION ON MOUNT / UseEFFECT
+	function alignProjectBlock() {
+		if (props.index % 2 === 0 || props.index % 2 === Infinity) {
+			projectInfoRef.current.classList.add(styles.DivLeft)
+			projectImageRef.current.classList.add(styles.DivRight)
+			projectNameRef.current.classList.add(styles.textAlignLeft)
+			projectDescriptionRef.current.classList.add(styles.textAlignLeft)
+		}
+		else {
+			projectImageRef.current.classList.add(styles.DivLeft)
+			projectInfoRef.current.classList.add(styles.DivRight)
+			projectNameRef.current.classList.add(styles.textAlignRight)
+			techContainerRef.current.classList.add(styles.flexDirectionReverse)
+			projectDescriptionRef.current.classList.add(styles.textAlignRight)
+		}
 
-
-	let projectImageClass;
-
-
-
-
-
-
+	}
 
 
 
 	function animateProjectBlock() {
 		console.log(enterCount);
 		if (inViewport && enterCount < 2) {
-
-
 			projectNameRef.current.style.top = "-20px";
-
-
-
-
 			projectImageRef.current.classList.add(styles.imageAnimation)
-
-
-
-
-
-
-
 			setTimeout(() => {
 				projectNameRef.current.style.top = "-12px";
 			}, 200);
@@ -130,7 +73,7 @@ const ProjectBlock = (props) => {
 	return (
 		<div className={styles.container}>
 			<div
-				className={styles.projectImage + "  " + ((props.index + 1) % 2 === 0 ? styles.DivLeft : styles.DivRight)}
+				className={styles.projectImage}
 				style={{
 					backgroundImage: `linear-gradient(
 			to bottom,
@@ -145,21 +88,22 @@ const ProjectBlock = (props) => {
 				<div className={styles.mobileOverlay}></div>
 			</div>
 			<div
-				className={projectInfoClasses()}
+				className={styles.projectInfo}
+				ref={projectInfoRef}
 
 			>
 				<div className={styles.projectNameContainer}>
-					<div className={projectNameClasses()} ref={projectNameRef}>
+					<div className={styles.projectName} ref={projectNameRef}>
 						{props.data.projectName}
 					</div>
 				</div>
-				<div className={techContainerClasses()}>
+				<div className={styles.technologiesContainer} ref={techContainerRef}>
 					{props.data.projectTechnologies.map((tech, index) => (
 						<TechCard text={tech} index={index} inViewport={inViewport} key={tech} />
 					))}
 				</div>
 				<div
-					className={projectDescriptionClasses()}
+					className={styles.projectDescription}
 					ref={projectDescriptionRef}
 
 				>
