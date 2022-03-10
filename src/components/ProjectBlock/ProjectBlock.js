@@ -26,16 +26,80 @@ const ProjectBlock = (props) => {
 
 
 	useEffect(() => { }, []);
+	let projectInfoClasses = () => {
 
-	let projectImageStyle;
-	let projectTitleStyle;
-	let projectDescriptionStyle = {
-		float: (props.index + 1) % 2 === 0 ? "right" : "left",
-	};
+		if (props.index % 2 === 0 || props.index % 2 === Infinity) {
+			return (styles.projectInfo + " " + styles.DivLeft)
+		}
+		else {
+			return (styles.projectInfo + " " + styles.DivRight)
+		}
+
+	}
+
+
+
+	let projectImageClasses;
+
+
+
+
+
+	let projectNameClasses = () => {
+		if (props.index % 2 === 0 || props.index % 2 === Infinity) {
+			return (styles.projectName + " " + styles.textAlignLeft)
+		}
+		else {
+
+			return (styles.projectName + " " + styles.textAlignRight)
+		}
+	}
+
+
+
+
+
+
+
+
+	let techContainerClasses = () => {
+		if (props.index % 2 === 0 || props.index % 2 === Infinity) {
+			return (styles.technologiesContainer)
+		}
+		else {
+
+			return (styles.technologiesContainer + " " + styles.flexDirectionReverse)
+		}
+	}
+
+
+
+
+	let projectDescriptionClasses = () => {
+		if (props.index % 2 === 0 || props.index % 2 === Infinity) {
+			return (styles.projectDescription + " " + styles.textAlignLeft)
+		}
+		else {
+
+			return (styles.projectDescription + " " + styles.textAlignRight)
+		}
+	}
 
 	let projectButtonsStyle = {
 		float: (props.index + 1) % 2 === 0 ? "right" : "left",
 	};
+
+
+
+	let projectImageClass;
+
+
+
+
+
+
+
+
 
 	function animateProjectBlock() {
 		console.log(enterCount);
@@ -43,6 +107,12 @@ const ProjectBlock = (props) => {
 
 
 			projectNameRef.current.style.top = "-20px";
+
+
+
+
+			projectImageRef.current.classList.add(styles.imageAnimation)
+
 
 
 
@@ -60,7 +130,7 @@ const ProjectBlock = (props) => {
 	return (
 		<div className={styles.container}>
 			<div
-				className={styles.projectImage + "  " + ((props.index + 1) % 2 === 0 ? styles.floatDivLeft : styles.floatDivRight)}
+				className={styles.projectImage + "  " + ((props.index + 1) % 2 === 0 ? styles.DivLeft : styles.DivRight)}
 				style={{
 					backgroundImage: `linear-gradient(
 			to bottom,
@@ -70,30 +140,28 @@ const ProjectBlock = (props) => {
 		url(${props.data.imageURL.src})`
 
 				}}
+				ref={projectImageRef}
 			>
 				<div className={styles.mobileOverlay}></div>
 			</div>
 			<div
-				className={styles.projectInfo}
-				style={{
-					right: (props.index + 1) % 2 === 0 ? "0px" : "55%",
-					textAlign: (props.index + 1) % 2 === 0 ? "right" : "left",
-				}}
+				className={projectInfoClasses()}
+
 			>
 				<div className={styles.projectNameContainer}>
-					<div className={styles.projectName} ref={projectNameRef}>
+					<div className={projectNameClasses()} ref={projectNameRef}>
 						{props.data.projectName}
 					</div>
 				</div>
-				<div className={styles.technologiesContainer}>
+				<div className={techContainerClasses()}>
 					{props.data.projectTechnologies.map((tech, index) => (
 						<TechCard text={tech} index={index} inViewport={inViewport} key={tech} />
 					))}
 				</div>
 				<div
-					className={styles.projectDescription}
+					className={projectDescriptionClasses()}
 					ref={projectDescriptionRef}
-					style={projectDescriptionStyle}
+
 				>
 					{props.data.description}
 				</div>

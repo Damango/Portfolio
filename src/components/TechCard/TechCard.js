@@ -3,10 +3,13 @@ import styles from "./TechCard.module.css";
 
 const TechCard = (props) => {
 	const techCardContainerRef = useRef(null);
+	const [view, setView] = useState(styles.techCardContainer);
 
 	let techBlockStyles = [styles.javascript, styles.react, styles.nextjs];
 
-	const [view, setView] = useState(styles.techCardContainer);
+
+
+
 
 	useEffect(() => {
 		/*setTimeout(() => {
