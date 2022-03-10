@@ -87,7 +87,7 @@ const ProjectBlock = (props) => {
 				</div>
 				<div className={styles.technologiesContainer}>
 					{props.data.projectTechnologies.map((tech, index) => (
-						<TechCard text={tech} index={index} inViewport={inViewport} />
+						<TechCard text={tech} index={index} inViewport={inViewport} key={tech} />
 					))}
 				</div>
 				<div
@@ -102,7 +102,7 @@ const ProjectBlock = (props) => {
 					<div className={styles.githubButton}>
 						Github
 						<div className={styles.buttonIcon}>
-							<FontAwesomeIcon icon={faGithub} />
+							<FontAwesomeIcon icon={faGithub} key={'github'} />
 						</div>
 					</div>
 				</div>

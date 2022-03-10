@@ -22,8 +22,10 @@ const Porfolio = () => {
 	const portfolioData = [
 		{
 			projectName: "UI Library",
+			id: '12f56',
 			projectTechnologies: ["javascript", "react", "nextjs"],
 			imageURL: uiLibraryImage,
+			id: '12e56',
 			description:
 				"A UI Library containing custom React components I have made. Components have interactive previews and documentation for usage and properties.",
 		},
@@ -31,6 +33,7 @@ const Porfolio = () => {
 			projectName: "Valorant Stat Tracker",
 			projectTechnologies: ["javascript", "react"],
 			imageURL: valorantTrackerImage,
+			id: '11f56',
 			description:
 				"A newly design PC Part Picker clone where users can select parts to put together a PC and get a rough estimate of what the actual build might cost.",
 		},
@@ -44,6 +47,7 @@ const Porfolio = () => {
 			projectName: "Project Manager",
 			projectTechnologies: ["javascript"],
 			imageURL: pcbuilderImage,
+			id: '15f5t',
 			description:
 				"A clone of Valorant Stat tracker similair to stat tracking website like op.gg. Containing randomly generated data and displays the match results and a data driven and valuable way.",
 		}
@@ -60,7 +64,7 @@ const Porfolio = () => {
 				</div>
 				<div className={styles.projectsContainer}>
 					{portfolioData.map((project, index) => (
-						<ProjectBlock data={project} index={index} />
+						<ProjectBlock data={project} index={index} key={project.id} />
 					))}
 				</div>
 			</div>
