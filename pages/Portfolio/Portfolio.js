@@ -30,17 +30,23 @@ const Porfolio = () => {
 		{
 			projectName: "Valorant Stat Tracker",
 			projectTechnologies: ["javascript", "react"],
-			imageURL: pcbuilderImage,
+			imageURL: valorantTrackerImage,
 			description:
 				"A newly design PC Part Picker clone where users can select parts to put together a PC and get a rough estimate of what the actual build might cost.",
 		},
 		{
-			projectName: "Project Manager",
-			projectTechnologies: ["javascript"],
-			imageURL: valorantTrackerImage,
+			projectName: "PC Builder",
+			projectTechnologies: ["javascript", "react"],
+			imageURL: pcbuilderImage,
 			description:
 				"A clone of Valorant Stat tracker similair to stat tracking website like op.gg. Containing randomly generated data and displays the match results and a data driven and valuable way.",
-		},
+		}, {
+			projectName: "Project Manager",
+			projectTechnologies: ["javascript"],
+			imageURL: pcbuilderImage,
+			description:
+				"A clone of Valorant Stat tracker similair to stat tracking website like op.gg. Containing randomly generated data and displays the match results and a data driven and valuable way.",
+		}
 	];
 
 	return (

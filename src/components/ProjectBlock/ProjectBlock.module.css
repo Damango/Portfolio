@@ -112,9 +112,25 @@
 	color: red !important;
 }
 
+
+
+.floatDivRight{
+	right: 0px;
+
+}
+
+.floatDivLeft{
+right: 50%;
+}
+
+.mobileOverlay{
+	display: none;
+}
+
+
 @media only screen and (max-width: 600px) {
 	.container {
-		width: 200px;
+		width: 80%;
 		background-color: teal;
 		padding: 0px;
 	}
@@ -150,6 +166,10 @@
 	}
 
 	.technologiesContainer {
+		position: relative;
+		width: 100%;
+		
+		height: 50px;
 	}
 
 	.buttonsContainer {
@@ -158,5 +178,22 @@
 		display: flex;
 		font-family: "Open Sans";
 		font-weight: 600;
+	}
+
+	.mobileOverlay{
+		position: absolute;
+		display: inline-block;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(31, 31, 31, 0.712);
+	}
+
+	.floatDivRight{
+		right: unset;
+	
+	}
+	
+	.floatDivLeft{
+	right: unset;
 	}
 }

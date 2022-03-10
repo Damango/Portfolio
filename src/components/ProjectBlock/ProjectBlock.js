@@ -9,14 +9,23 @@ import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import styles from "../ProjectBlock/ProjectBlock.module.css";
 
 const ProjectBlock = (props) => {
-	const projectDescriptionRef = useRef(null);
 
+
+	//References to animated elements
+	const projectDescriptionRef = useRef(null);
 	const projectNameRef = useRef(null);
+	const projectImageRef = useRef(null)
+
+	//View port controller
 	const { inViewport, enterCount, leaveCount } = useInViewport(
 		projectDescriptionRef
 	);
 
-	useEffect(() => {}, []);
+
+	//Classes change variables
+
+
+	useEffect(() => { }, []);
 
 	let projectImageStyle;
 	let projectTitleStyle;
@@ -31,7 +40,15 @@ const ProjectBlock = (props) => {
 	function animateProjectBlock() {
 		console.log(enterCount);
 		if (inViewport && enterCount < 2) {
+
+
 			projectNameRef.current.style.top = "-20px";
+
+
+
+
+
+
 			setTimeout(() => {
 				projectNameRef.current.style.top = "-12px";
 			}, 200);
@@ -43,17 +60,19 @@ const ProjectBlock = (props) => {
 	return (
 		<div className={styles.container}>
 			<div
-				className={styles.projectImage}
+				className={styles.projectImage + "  " + ((props.index + 1) % 2 === 0 ? styles.floatDivLeft : styles.floatDivRight)}
 				style={{
 					backgroundImage: `linear-gradient(
 			to bottom,
 			rgba(22, 22, 22, 0.268),
 			rgba(22, 22, 22, 0.468)
 		),
-		url(${props.data.imageURL.src})`,
-					right: (props.index + 1) % 2 === 0 ? "50%" : "0px !important",
+		url(${props.data.imageURL.src})`
+
 				}}
-			></div>
+			>
+				<div className={styles.mobileOverlay}></div>
+			</div>
 			<div
 				className={styles.projectInfo}
 				style={{
