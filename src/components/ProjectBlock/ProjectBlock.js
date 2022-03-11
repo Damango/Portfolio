@@ -18,6 +18,9 @@ const ProjectBlock = (props) => {
 	const projectInfoRef = useRef(null)
 	const techContainerRef = useRef(null)
 
+	const viewSiteButtonRef = useRef(null)
+	const githubButtonRef = useRef(null)
+
 
 	//View port controller
 	const { inViewport, enterCount, leaveCount } = useInViewport(
@@ -44,6 +47,7 @@ const ProjectBlock = (props) => {
 			projectImageRef.current.classList.add(styles.DivRight)
 			projectNameRef.current.classList.add(styles.textAlignLeft)
 			projectDescriptionRef.current.classList.add(styles.textAlignLeft)
+
 		}
 		else {
 			projectImageRef.current.classList.add(styles.DivLeft)
@@ -62,6 +66,11 @@ const ProjectBlock = (props) => {
 		if (inViewport && enterCount < 2) {
 			projectNameRef.current.style.top = "-20px";
 			projectImageRef.current.classList.add(styles.imageAnimation)
+			projectDescriptionRef.current.classList.add(styles.projectDescriptionAnimation)
+			viewSiteButtonRef.current.classList.add(styles.buttonAnimation)
+			githubButtonRef.current.classList.add(styles.buttonAnimation)
+
+
 			setTimeout(() => {
 				projectNameRef.current.style.top = "-12px";
 			}, 200);
@@ -110,8 +119,8 @@ const ProjectBlock = (props) => {
 					{props.data.description}
 				</div>
 				<div className={styles.buttonsContainer} style={projectButtonsStyle}>
-					<div className={styles.viewSiteButton}>View Site</div>
-					<div className={styles.githubButton}>
+					<div className={styles.viewSiteButton} ref={viewSiteButtonRef}>View Site</div>
+					<div className={styles.githubButton} ref={githubButtonRef}>
 						Github
 						<div className={styles.buttonIcon}>
 							<FontAwesomeIcon icon={faGithub} key={'github'} />

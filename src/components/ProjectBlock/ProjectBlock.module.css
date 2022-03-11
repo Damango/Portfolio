@@ -63,6 +63,12 @@
 .projectDescription {
 	margin-top: 20px;
 	width: 100%;
+	opacity: 0;
+	transition: 1.3s;
+}
+
+.projectDescriptionAnimation{
+	opacity: 1;
 }
 
 .technologiesContainer {
@@ -81,14 +87,25 @@
 }
 
 .viewSiteButton {
+	position: relative;
+	top: -40px;
+	opacity: 0;
 	background-color: transparent;
 	border: 2px solid white;
 	padding: 8px 20px;
 	color: white;
 	font-size: 20px;
+	transition: 0.3s;
 }
 
+.buttonAnimation{
+	top: 0px !important;
+	opacity: 1;
+}
 .githubButton {
+	position: relative;
+	top: -40px;
+	opacity: 1;
 	background-color: transparent;
 	border: 2px solid white;
 	padding: 8px 20px;
@@ -98,6 +115,7 @@
 	display: flex;
 	align-items: center;
 	margin-left: 20px;
+	transition-delay: 0.2s;
 	transition: 0.3s;
 }
 
