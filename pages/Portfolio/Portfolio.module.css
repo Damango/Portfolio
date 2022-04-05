@@ -82,12 +82,18 @@
 }
 
 .nameContainer {
+	position: relative;
 	font-weight: bold;
 	font-size: 50px;
+	top: 0px;
+	transition: 0.3s;
 }
 
 .subTextContainer {
+	position: relative;
 	font-size: 30px;
+	top: 0px;
+	transition: 0.3s;
 }
 
 .jumbotronButtonsContainer {
@@ -284,6 +290,26 @@
 }
 
 @media only screen and (max-width: 700px) {
+	.jumbotronTextContainer {
+		top: 36%;
+	}
+	.nameContainer {
+		position: relative;
+		left: 50%;
+		transform: translateX(-50%);
+		font-weight: bold;
+		font-size: 35px;
+
+		width: 150%;
+	}
+
+	.subTextContainer {
+		position: relative;
+		left: 50%;
+		transform: translateX(-50%);
+		font-size: 25px;
+		width: 150%;
+	}
 	.emailContainer {
 		width: 350px;
 		font-size: 14px;
@@ -296,20 +322,6 @@
 	.copyEmailButton {
 		width: 50px;
 	}
-
-	.nameContainer {
-		position: relative;
-		left: 50%;
-		transform: translateX(-50%);
-		font-weight: bold;
-		font-size: 35px;
-
-		width: 150%;
-	}
-
-	.subTextContainer {
-		font-size: 25px;
-	}
 }
 
 @media only screen and (max-width: 600px) {
@@ -318,5 +330,24 @@
 	}
 	.jumboLine2 {
 		right: 20px;
+	}
+}
+
+@media only screen and (max-width: 450px) {
+	.emailContainer {
+		width: 300px;
+		font-size: 12px;
+	}
+
+	.emailContainer svg {
+		width: 15px;
+		margin-right: 10px;
+	}
+
+	.copyEmailButton {
+		width: 45px;
+	}
+	.copyEmailButton svg {
+		margin-right: 0px;
 	}
 }

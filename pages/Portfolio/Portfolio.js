@@ -71,6 +71,10 @@ const Porfolio = () => {
 
 	useEffect(() => {
 		setTimeout(() => {
+			let nameElement = document.querySelector("." + styles.nameContainer);
+			let subTextElement = document.querySelector(
+				"." + styles.subTextContainer
+			);
 			let lineWidthElements = document.querySelectorAll(
 				"." + styles.buttonLineWidth
 			);
@@ -90,6 +94,8 @@ const Porfolio = () => {
 
 			jumboLine1.style.height = "55%";
 			jumboLine2.style.height = "85%";
+			nameElement.style.top = "20px";
+			subTextElement.style.top = "30px";
 
 			setTimeout(() => {
 				lineBall1.style.width = "30px";
@@ -114,6 +120,8 @@ const Porfolio = () => {
 			}
 
 			setTimeout(() => {
+				nameElement.style.top = "0px";
+				subTextElement.style.top = "0px";
 				emailContainerElement.style.opacity = 1;
 				emailContainerElement.style.bottom = "-60px";
 				setTimeout(() => {
