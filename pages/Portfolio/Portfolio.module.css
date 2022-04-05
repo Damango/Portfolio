@@ -9,6 +9,11 @@
 .jumbotronContainer {
 	position: relative;
 	background-color: rgb(27, 27, 27);
+	background-image: linear-gradient(#1b1b1bc7, #181d25f8),
+		url("../../src/media/linesbackground.jpg");
+
+	background-position: center;
+	background-size: cover;
 	width: 100%;
 	height: 80%;
 	overflow: hidden;
@@ -21,61 +26,12 @@
 	height: 100%;
 }
 
-.jumboLine1 {
-	position: absolute;
-	bottom: 0px;
-	left: 100px;
-	background-color: white;
-	height: 0%;
-	width: 2px;
-	transition: 0.3s;
-}
-.jumboLine2 {
-	position: absolute;
-	right: 100px;
-	background-color: white;
-	height: 0%;
-	width: 2px;
-	transition: 0.4s;
-	transition-delay: 0.2s;
-}
-
-.lineBall1 {
-	position: absolute;
-	background-color: red;
-	border-radius: 50%;
-	width: 0px;
-	height: 0px;
-	top: -10px;
-	left: 50%;
-	transform: translateX(-50%);
-	transition: 0.2s;
-	animation-name: colorChanger;
-	animation-duration: 1.5s;
-	animation-iteration-count: infinite;
-	animation-direction: alternate;
-}
-.lineBall2 {
-	position: absolute;
-	background-color: rgb(241, 53, 53);
-	border-radius: 50%;
-	width: 0px;
-	height: 0px;
-	left: 50%;
-	bottom: -10px;
-	transform: translateX(-50%);
-	transition: 0.2s;
-	animation-name: colorChanger;
-	animation-duration: 1.5s;
-	animation-iteration-count: infinite;
-	animation-direction: alternate;
-}
 .jumbotronTextContainer {
 	position: absolute;
 	left: 50%;
-	top: 30%;
+	top: 35%;
 	transform: translate(-50%, -50%);
-
+	width: 600px;
 	text-align: center;
 	z-index: 5;
 	color: white;
@@ -86,6 +42,7 @@
 	font-weight: bold;
 	font-size: 50px;
 	top: 0px;
+	opacity: 0;
 	transition: 0.3s;
 }
 
@@ -93,6 +50,7 @@
 	position: relative;
 	font-size: 30px;
 	top: 0px;
+	opacity: 0;
 	transition: 0.3s;
 }
 
@@ -180,13 +138,13 @@
 
 .emailContainer {
 	position: absolute;
-	overflow: hidden;
+
 	background-color: white;
 	color: #2f3640;
 	padding: 0px;
 	height: 50px;
 	border-radius: 3px;
-	width: 500px;
+	width: 100%;
 	left: 50%;
 	transform: translateX(-50%);
 	opacity: 0;
@@ -272,20 +230,16 @@
 	background-color: #181d25;
 }
 
-@keyframes colorChanger {
-	from {
-		background-color: #3498db;
-	}
-	to {
-		background-color: purple;
-	}
-}
 @media only screen and (max-width: 800px) {
-	.jumboLine1 {
-		left: 40px;
-	}
-	.jumboLine2 {
-		right: 40px;
+	.jumbotronTextContainer {
+		position: absolute;
+		left: 50%;
+		top: 30%;
+		transform: translate(-50%, -50%);
+		width: 450px;
+		text-align: center;
+		z-index: 5;
+		color: white;
 	}
 }
 
@@ -310,9 +264,9 @@
 		font-size: 25px;
 		width: 150%;
 	}
+
 	.emailContainer {
-		width: 350px;
-		font-size: 14px;
+		font-size: 17px;
 	}
 
 	.emailContainer svg {
@@ -325,11 +279,19 @@
 }
 
 @media only screen and (max-width: 600px) {
-	.jumboLine1 {
-		left: 20px;
+	.jumbotronTextContainer {
+		position: absolute;
+		left: 50%;
+		top: 40%;
+		transform: translate(-50%, -50%);
+		width: 350px;
+		text-align: center;
+		z-index: 5;
+		color: white;
 	}
-	.jumboLine2 {
-		right: 20px;
+
+	.emailContainer {
+		font-size: 13px;
 	}
 }
 

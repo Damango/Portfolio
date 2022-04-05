@@ -2,13 +2,14 @@ import React, { useRef, useEffect, useState } from "react";
 import Script from "next/script";
 import styles from "./Portfolio.module.css";
 
-import Canvas from "../../src/components/Canvas/Canvas";
 import axios from "axios";
 
 import uiLibraryImage from "../../src/media/uilibrarybackground.png";
 import pcbuilderImage from "../../src/media/pcbuilderbackground.png";
 import valorantTrackerImage from "../../src/media/valoranttrackerbackground.png";
 
+//Components Imports
+import EmailPopUp from "../../src/components/EmailPopUp/EmailPopUp";
 import ProjectBlock from "../../src/components/ProjectBlock/ProjectBlock";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -67,7 +68,7 @@ const Porfolio = () => {
 		},
 	];
 
-	const [counter, setCounter] = useState(0);
+	const [emailPopUp, setEmailPopUp] = useState(false);
 
 	useEffect(() => {
 		setTimeout(() => {
@@ -86,29 +87,10 @@ const Porfolio = () => {
 				"." + styles.emailContainer
 			);
 
-			let jumboLine1 = document.querySelector("." + styles.jumboLine1);
-			let jumboLine2 = document.querySelector("." + styles.jumboLine2);
-
-			let lineBall1 = document.querySelector("." + styles.lineBall1);
-			let lineBall2 = document.querySelector("." + styles.lineBall2);
-
-			jumboLine1.style.height = "55%";
-			jumboLine2.style.height = "85%";
 			nameElement.style.top = "20px";
 			subTextElement.style.top = "30px";
-
-			setTimeout(() => {
-				lineBall1.style.width = "30px";
-				lineBall1.style.height = "30px";
-				lineBall2.style.width = "30px";
-				lineBall2.style.height = "30px";
-				setTimeout(() => {
-					lineBall1.style.width = "25px";
-					lineBall1.style.height = "25px";
-					lineBall2.style.width = "25px";
-					lineBall2.style.height = "25px";
-				}, 200);
-			}, 300);
+			nameElement.style.opacity = 1;
+			subTextElement.style.opacity = 1;
 
 			let i;
 			for (i = 0; i < lineWidthElements.length; i++) {
@@ -133,6 +115,22 @@ const Porfolio = () => {
 
 	function openTab(url) {
 		window.open(url);
+	}
+
+	function renderEmailPopUp() {
+		if (emailPopUp) {
+			return <EmailPopUp toggleEmailPopUp={toggleEmailPopUp} />;
+		}
+	}
+
+	function toggleEmailPopUp() {
+		if (emailPopUp) {
+			setEmailPopUp(false);
+		} else {
+			setEmailPopUp(true);
+		}
+
+		navigator.clipboard.writeText("justinkesslerio@protonmail.com");
 	}
 
 	return (
@@ -191,7 +189,7 @@ const Porfolio = () => {
 								</div>
 							</button>
 
-							<div className={styles.emailContainer}>
+							<div className={styles.emailContainer} onClick={toggleEmailPopUp}>
 								<div className={styles.emailTextContainer}>
 									<FontAwesomeIcon icon={faEnvelope} />
 									<p>justinkesslerio@protonmail.com</p>
@@ -200,6 +198,7 @@ const Porfolio = () => {
 								<button className={styles.copyEmailButton}>
 									<FontAwesomeIcon icon={faClipboard} />
 								</button>
+								{renderEmailPopUp()}
 							</div>
 						</div>
 					</div>

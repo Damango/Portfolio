@@ -10,8 +10,6 @@
 	color: white;
 	margin-top: 100px;
 	margin-bottom: 20px;
-	
-
 }
 
 .projectImage {
@@ -21,17 +19,13 @@
 
 	width: 1px;
 	height: 0px;
-	
-	transition: height 0.3s ease-in-out , width 0.3s ease-in-out 0.4s;
-	
 
+	transition: height 0.3s ease-in-out, width 0.3s ease-in-out 0.4s;
 }
 
-.imageAnimation{
-	
+.imageAnimation {
 	width: 500px;
 	height: 250px;
-	
 }
 
 .projectInfo {
@@ -39,9 +33,6 @@
 	height: 100%;
 
 	width: 450px;
-	
-	
-	
 }
 
 .projectNameContainer {
@@ -67,7 +58,7 @@
 	transition: 1.3s;
 }
 
-.projectDescriptionAnimation{
+.projectDescriptionAnimation {
 	opacity: 1;
 }
 
@@ -98,7 +89,7 @@
 	transition: 0.3s;
 }
 
-.buttonAnimation{
+.buttonAnimation {
 	top: 0px !important;
 	opacity: 1;
 }
@@ -150,54 +141,44 @@
 	color: red !important;
 }
 
-
-
-.DivRight{
+.DivRight {
 	right: 0px;
-	
 }
 
-.DivLeft{
-
-left: 0px;
+.DivLeft {
+	left: 0px;
 }
 
-.floatDivRight{
+.floatDivRight {
 	float: right;
-
 }
 
-
-
-.floatDivLeft{
-float: left;
-
+.floatDivLeft {
+	float: left;
 }
 
-.textAlignRight{
+.textAlignRight {
 	text-align: right;
-
 }
-.textAlignLeft{
+.textAlignLeft {
 	text-align: left;
 }
 
-.textAlignCenter{
+.textAlignCenter {
 	text-align: center;
 }
 
-.flexDirectionReverse{
+.flexDirectionReverse {
 	flex-direction: row-reverse;
 }
-.mobileOverlay{
+.mobileOverlay {
 	display: none;
 }
-
 
 @media only screen and (max-width: 600px) {
 	.container {
 		width: 80%;
-		
+
 		padding: 0px;
 	}
 	.projectImage {
@@ -205,11 +186,10 @@ float: left;
 
 		background-size: cover;
 
-		
+		display: none;
 	}
 
-	.imageAnimation{
-	
+	.imageAnimation {
 		width: 100%;
 		height: 100%;
 	}
@@ -239,19 +219,19 @@ float: left;
 	.technologiesContainer {
 		position: relative;
 		width: 100%;
-	
+
 		height: 50px;
 	}
 
 	.buttonsContainer {
 		position: relative;
-		
+
 		display: flex;
 		font-family: "Open Sans";
 		font-weight: 600;
 	}
 
-	.mobileOverlay{
+	.mobileOverlay {
 		position: absolute;
 		left: 0px;
 		display: inline-block;
@@ -259,8 +239,4 @@ float: left;
 		height: 100%;
 		background-color: rgba(4, 3, 26, 0.863);
 	}
-
-
-
-
 }
