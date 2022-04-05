@@ -8,20 +8,68 @@
 
 .jumbotronContainer {
 	position: relative;
-	background-color: rgb(247, 206, 247);
+	background-color: rgb(27, 27, 27);
 	width: 100%;
 	height: 70%;
+	overflow: hidden;
 }
 
-.tilesContainer {
+.animationsContainer {
 	position: absolute;
+	background-color: transparent;
 	width: 100%;
 	height: 100%;
-	background-color: teal;
-	display: grid;
-	grid-template-columns: repeat(auto-fill, 20px);
 }
 
+.jumboLine1 {
+	position: absolute;
+	bottom: 0px;
+	left: 100px;
+	background-color: white;
+	height: 0%;
+	width: 2px;
+	transition: 0.3s;
+}
+.jumboLine2 {
+	position: absolute;
+	right: 100px;
+	background-color: white;
+	height: 0%;
+	width: 2px;
+	transition: 0.4s;
+	transition-delay: 0.2s;
+}
+
+.lineBall1 {
+	position: absolute;
+	background-color: red;
+	border-radius: 50%;
+	width: 0px;
+	height: 0px;
+	top: -10px;
+	left: 50%;
+	transform: translateX(-50%);
+	transition: 0.2s;
+	animation-name: colorChanger;
+	animation-duration: 1.5s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+}
+.lineBall2 {
+	position: absolute;
+	background-color: rgb(241, 53, 53);
+	border-radius: 50%;
+	width: 0px;
+	height: 0px;
+	left: 50%;
+	bottom: -10px;
+	transform: translateX(-50%);
+	transition: 0.2s;
+	animation-name: colorChanger;
+	animation-duration: 1.5s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+}
 .jumbotronTextContainer {
 	position: absolute;
 	left: 50%;
@@ -29,6 +77,8 @@
 	transform: translate(-50%, -50%);
 
 	text-align: center;
+	z-index: 5;
+	color: white;
 }
 
 .nameContainer {
@@ -40,8 +90,219 @@
 	font-size: 30px;
 }
 
+.jumbotronButtonsContainer {
+	position: relative;
+
+	top: 50px;
+	padding: 1px;
+}
+
+.jumbotronButton {
+	position: relative;
+	display: block;
+	left: 50%;
+	transform: translateX(-50%);
+	margin-bottom: 20px;
+	width: 100%;
+	padding: 15px;
+	background-color: transparent;
+	border-style: none;
+	color: white;
+	font-family: "Inter";
+	transition: 0.3s;
+	font-weight: 600;
+	font-size: 16px;
+}
+
+.jumbotronButton svg {
+	width: 20px;
+	margin-right: 15px;
+}
+
+.jumbotronButtonText {
+	position: relative;
+	left: 50%;
+	transform: translateX(-50%);
+
+	height: 20px;
+	justify-content: center;
+	display: flex;
+	align-items: center;
+}
+
+.jumbotronButtonText p {
+	display: inline-block;
+}
+
+.jumbotronButton:hover {
+	color: black;
+	background-color: white;
+	cursor: pointer;
+}
+
+.buttonLineHeight {
+	position: absolute;
+	background-color: white;
+	width: 2px;
+	height: 0px;
+	transition: 0.6s;
+}
+.buttonLineWidth {
+	position: absolute;
+	background-color: white;
+	width: 0px;
+	height: 2px;
+	transition: 0.6s;
+}
+
+.buttonLine1 {
+	left: 0px;
+	top: 0px;
+}
+.buttonLine2 {
+	right: 0px;
+	top: 0px;
+}
+.buttonLine3 {
+	left: 0px;
+	bottom: 0px;
+}
+.buttonLine4 {
+	right: 0px;
+	bottom: 0px;
+}
+
+.emailContainer {
+	position: absolute;
+	overflow: hidden;
+	background-color: white;
+	color: #2f3640;
+	padding: 0px;
+	height: 50px;
+	border-radius: 3px;
+	width: 500px;
+	left: 50%;
+	transform: translateX(-50%);
+	opacity: 0;
+	justify-content: center;
+	font-family: "Inter";
+	font-weight: bold;
+	font-size: 20px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	transition: 0.2s;
+
+	bottom: -120px;
+}
+
+.emailContainer:hover {
+	background-color: #2f3640;
+	color: white;
+	cursor: pointer;
+}
+
+.emailContainer svg {
+	width: 20px;
+}
+
+.emailTextContainer {
+	position: relative;
+	display: inline-block;
+
+	height: 100%;
+
+	display: flex;
+	align-items: center;
+}
+
+.emailTextContainer svg {
+	position: relative;
+
+	width: 20px;
+	margin-right: 25px;
+	margin-left: 25px;
+}
+
+.copyEmailButton {
+	position: relative;
+	height: 100%;
+	width: 60px;
+
+	background-color: #2f3640;
+	border-top-right-radius: 3px;
+	border-bottom-right-radius: 3px;
+	border-style: none;
+	border-left: 1px solid white;
+	transition: 0.3s;
+}
+
+.copyEmailButton:hover {
+	cursor: pointer;
+	background-color: white;
+	border-color: #2f3640;
+	color: #2f3640;
+}
+
+.copyEmailButton svg {
+	position: relative;
+
+	color: white;
+
+	transition: 0.3s;
+}
+
+.copyEmailButton:hover svg {
+	color: #2f3640;
+}
+
+.emailContainer p {
+	display: inline-block;
+}
+
 .projectsContainer {
 	box-sizing: border-box;
 	padding: 1px;
 	background-color: #181d25;
+}
+
+@keyframes colorChanger {
+	from {
+		background-color: #3498db;
+	}
+	to {
+		background-color: purple;
+	}
+}
+@media only screen and (max-width: 800px) {
+	.jumboLine1 {
+		left: 40px;
+	}
+	.jumboLine2 {
+		right: 40px;
+	}
+}
+
+@media only screen and (max-width: 700px) {
+	.emailContainer {
+		width: 350px;
+		font-size: 14px;
+	}
+
+	.emailContainer svg {
+		width: 15px;
+	}
+
+	.copyEmailButton {
+		width: 50px;
+	}
+}
+
+@media only screen and (max-width: 600px) {
+	.jumboLine1 {
+		left: 20px;
+	}
+	.jumboLine2 {
+		right: 20px;
+	}
 }

@@ -15,7 +15,7 @@ export default function Home() {
 				<link
 					rel="preconnect"
 					href="https://fonts.gstatic.com"
-					crossorigin
+					crossOrigin
 				></link>
 				<link
 					href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;500;600;700&family=Cairo:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;500;600&family=Poppins:wght@300;400;500;600&family=Source+Sans+Pro:wght@300;400;600;700&display=swap"
@@ -23,7 +23,7 @@ export default function Home() {
 				></link>
 			</Head>
 
-			<Portfolio />
+			<Portfolio key='portfolio_root' />
 		</div>
 	);
 }
