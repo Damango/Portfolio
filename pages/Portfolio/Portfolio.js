@@ -26,10 +26,9 @@ const Porfolio = () => {
 
 			id: "12f56",
 
-			id: "12f56",
-
 			projectTechnologies: ["javascript", "react", "nextjs"],
 			imageURL: uiLibraryImage,
+			webURL: "https://condescending-nobel-1601c9.netlify.app/",
 			id: "12e56",
 			description:
 				"A UI Library containing custom React components I have made. Components have interactive previews and documentation for usage and properties.",
@@ -40,7 +39,7 @@ const Porfolio = () => {
 			imageURL: valorantTrackerImage,
 
 			id: "11f56",
-			id: "11f56",
+			webURL: "https://silly-varahamihira-e8e082.netlify.app/",
 
 			description:
 				"A newly design PC Part Picker clone where users can select parts to put together a PC and get a rough estimate of what the actual build might cost.",
@@ -49,6 +48,7 @@ const Porfolio = () => {
 			projectName: "PC Builder",
 			projectTechnologies: ["javascript", "react"],
 			imageURL: pcbuilderImage,
+			webURL: "https://hopeful-gates-9cc444.netlify.app/",
 			description:
 				"A clone of Valorant Stat tracker similair to stat tracking website like op.gg. Containing randomly generated data and displays the match results and a data driven and valuable way.",
 		},
@@ -56,12 +56,7 @@ const Porfolio = () => {
 			projectName: "Project Manager",
 			projectTechnologies: ["javascript"],
 			imageURL: pcbuilderImage,
-			id: "15f5t",
-		},
-		{
-			projectName: "Project Manager",
-			projectTechnologies: ["javascript"],
-			imageURL: pcbuilderImage,
+			webURL: "https://determined-northcutt-13b391.netlify.app/",
 			id: "15f5t",
 			description:
 				"A clone of Valorant Stat tracker similair to stat tracking website like op.gg. Containing randomly generated data and displays the match results and a data driven and valuable way.",
