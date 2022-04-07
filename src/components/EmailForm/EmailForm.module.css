@@ -1,0 +1,86 @@
+.emailFormContainer {
+	position: absolute;
+	background-color: white;
+	opacity: 0;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	width: 500px;
+	height: 700px;
+	padding: 15px;
+	border-radius: 5px;
+	box-shadow: 0px 0px 2px 2px rgb(97, 97, 97);
+	z-index: 10;
+	transition: 0.1s;
+}
+
+.inputContainer {
+	position: relative;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 90%;
+	margin-bottom: 15px;
+}
+
+.inputHeader {
+	display: block;
+	margin-bottom: 20px;
+	font-family: "Inter";
+	font-weight: bold;
+	color: #2f3640;
+	font-size: 20px;
+	z-index: -1;
+}
+
+.formInput {
+	width: 100%;
+	padding: 15px;
+	margin-bottom: 10px;
+	border: 2px solid rgb(189, 189, 189);
+	border-radius: 5px;
+	font-family: "Inter";
+	font-size: 18px;
+	transition: 0.3s;
+}
+
+.formInput:hover {
+	border-color: black;
+}
+
+.emailMessageInputContainer textarea {
+	height: 200px;
+}
+
+#nameInput {
+}
+
+#emailInput {
+}
+
+#messageInput {
+	height: 200px;
+	resize: none;
+}
+
+.submitButton {
+	position: absolute;
+	bottom: 15px;
+	left: 50%;
+	transform: translateX(-50%);
+	border-style: none;
+	padding: 10px 20px;
+	width: 60%;
+	font-family: "Inter";
+	font-size: 30px;
+	font-weight: bold;
+	background-color: rgb(25, 60, 255);
+	color: white;
+	border-radius: 5px;
+	transition: 0.3s;
+}
+
+.submitButton:hover {
+	cursor: pointer;
+	background-color: rgb(2, 2, 172);
+	width: 70%;
+}

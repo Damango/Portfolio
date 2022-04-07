@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
-
+import { Html, Main, NextScript } from "next/document";
 import Portfolio from "./Portfolio/Portfolio";
 
 export default function Home() {
@@ -23,7 +23,7 @@ export default function Home() {
 				></link>
 			</Head>
 
-			<Portfolio key='portfolio_root' />
+			<Portfolio key="portfolio_root" />
 		</div>
 	);
 }

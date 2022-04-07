@@ -28,6 +28,7 @@ const ProjectBlock = (props) => {
 
 	useEffect(() => {
 		alignProjectBlock();
+		console.log("url");
 	}, []);
 
 	let projectButtonsStyle = {
@@ -71,10 +72,9 @@ const ProjectBlock = (props) => {
 		window.open(props.data.webURL);
 	}
 
-	animateProjectBlock();
-
 	return (
 		<div className={styles.container}>
+			{animateProjectBlock()}
 			<div
 				className={styles.projectImage}
 				style={{

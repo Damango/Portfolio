@@ -11,6 +11,9 @@ import valorantTrackerImage from "../../src/media/valoranttrackerbackground.png"
 //Components Imports
 import EmailPopUp from "../../src/components/EmailPopUp/EmailPopUp";
 import ProjectBlock from "../../src/components/ProjectBlock/ProjectBlock";
+import EmailForm from "../../src/components/EmailForm/EmailForm";
+
+//Icon Imports
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
@@ -64,6 +67,7 @@ const Porfolio = () => {
 	];
 
 	const [emailPopUp, setEmailPopUp] = useState(false);
+	const [emailForm, setEmailForm] = useState(false);
 
 	useEffect(() => {
 		setTimeout(() => {
@@ -114,7 +118,12 @@ const Porfolio = () => {
 
 	function renderEmailPopUp() {
 		if (emailPopUp) {
-			return <EmailPopUp toggleEmailPopUp={toggleEmailPopUp} />;
+			return (
+				<EmailPopUp
+					toggleEmailPopUp={toggleEmailPopUp}
+					emailPopUp={emailPopUp}
+				/>
+			);
 		}
 	}
 
@@ -128,18 +137,28 @@ const Porfolio = () => {
 		navigator.clipboard.writeText("justinkesslerio@protonmail.com");
 	}
 
+	function renderEmailForm() {
+		if (emailForm) {
+			return (
+				<EmailForm toggleEmailForm={toggleEmailForm} emailForm={emailForm} />
+			);
+		}
+	}
+
+	function toggleEmailForm() {
+		if (emailForm) {
+			setEmailForm(false);
+		} else {
+			setEmailForm(true);
+		}
+	}
+
 	return (
 		<>
 			<div className={styles.container}>
+				{emailForm && <EmailForm toggleEmailForm={toggleEmailForm} />}
+
 				<div className={styles.jumbotronContainer}>
-					<div className={styles.animationsContainer}>
-						<div className={styles.jumboLine1}>
-							<div className={styles.lineBall1}></div>
-						</div>
-						<div className={styles.jumboLine2}>
-							<div className={styles.lineBall2}></div>
-						</div>
-					</div>
 					<div className={styles.jumbotronTextContainer}>
 						<div className={styles.nameContainer}>JUSTIN KESSLER</div>
 						<div className={styles.subTextContainer}>Software Developer</div>
@@ -184,13 +203,21 @@ const Porfolio = () => {
 								</div>
 							</button>
 
-							<div className={styles.emailContainer} onClick={toggleEmailPopUp}>
+							<div
+								className={styles.emailContainer}
+								onClick={() => {
+									toggleEmailForm();
+								}}
+							>
 								<div className={styles.emailTextContainer}>
 									<FontAwesomeIcon icon={faEnvelope} />
 									<p>justinkesslerio@protonmail.com</p>
 								</div>
 
-								<button className={styles.copyEmailButton}>
+								<button
+									className={styles.copyEmailButton}
+									onClick={toggleEmailPopUp}
+								>
 									<FontAwesomeIcon icon={faClipboard} />
 								</button>
 								{renderEmailPopUp()}
