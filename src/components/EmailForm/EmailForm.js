@@ -51,19 +51,7 @@ const EmailForm = (props) => {
 		}, 100);
 	}, []);
 
-	function sendEmail() {
-		Email.send({
-			Host: "smtp.gmail.com",
-			Username: "sender@email_address.com",
-			Password: "Enter your password",
-			To: "zkessler70@gmail.com",
-			From: "testing@gmail.com",
-			Subject: "Sending Email using javascript",
-			Body: "Well that was easy!!",
-		}).then(function (message) {
-			console.log(message);
-		});
-	}
+	function sendEmail() {}
 
 	return (
 		<>
