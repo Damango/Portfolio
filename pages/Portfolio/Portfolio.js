@@ -32,7 +32,7 @@ const Porfolio = () => {
 			projectTechnologies: ["javascript", "react", "nextjs"],
 			imageURL: uiLibraryImage,
 			webURL: "https://condescending-nobel-1601c9.netlify.app/",
-			id: "12e56",
+
 			description:
 				"A UI Library containing custom React components I have made. Components have interactive previews and documentation for usage and properties.",
 		},
@@ -57,7 +57,7 @@ const Porfolio = () => {
 		},
 		{
 			projectName: "Project Manager",
-			projectTechnologies: ["javascript"],
+			projectTechnologies: ["react", "javascript"],
 			imageURL: pcbuilderImage,
 			webURL: "https://determined-northcutt-13b391.netlify.app/",
 			id: "15f5t",
