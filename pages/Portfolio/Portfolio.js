@@ -136,6 +136,9 @@ const Porfolio = () => {
 	}
 
 	function toggleEmailPopUp() {
+		setTimeout(() => {
+			setEmailForm(false);
+		});
 		if (emailPopUp) {
 			setEmailPopUp(false);
 		} else {
