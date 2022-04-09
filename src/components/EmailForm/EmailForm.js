@@ -51,11 +51,21 @@ const EmailForm = (props) => {
 		}, 100);
 	}, []);
 
+	function renderSumbitionConfirmation() {}
+
 	function sendEmail() {}
 
 	return (
 		<>
 			<div className={styles.emailFormContainer} ref={emailFormContainerRef}>
+				<button
+					className={styles.closeButton}
+					onClick={() => {
+						props.toggleEmailForm();
+					}}
+				>
+					X
+				</button>
 				<div className={styles.inputContainer}>
 					<span className={styles.inputHeader}>Name</span>
 					<input
