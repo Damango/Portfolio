@@ -117,6 +117,13 @@ const Porfolio = () => {
 		window.open(url);
 	}
 
+	function scrollToProjects() {
+		document.querySelector("." + styles.projectsContainer).scrollIntoView({
+			behavior: "smooth",
+			block: "start",
+		});
+	}
+
 	function renderEmailPopUp() {
 		if (emailPopUp) {
 			return (
@@ -164,7 +171,10 @@ const Porfolio = () => {
 						<div className={styles.nameContainer}>JUSTIN KESSLER</div>
 						<div className={styles.subTextContainer}>Software Developer</div>
 						<div className={styles.jumbotronButtonsContainer}>
-							<button className={styles.jumbotronButton}>
+							<button
+								className={styles.jumbotronButton}
+								onClick={scrollToProjects}
+							>
 								<span
 									className={styles.buttonLineWidth + " " + styles.buttonLine1}
 								></span>

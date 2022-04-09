@@ -5,6 +5,7 @@ import Script from "next/script";
 const EmailForm = (props) => {
 	const emailFormContainerRef = useRef();
 	const inputContainerRef = useRef(null);
+	const emailConfirmationRef = useRef(null);
 
 	function closeFormHandler(e) {
 		let emailFormElement = emailFormContainerRef;
@@ -51,9 +52,41 @@ const EmailForm = (props) => {
 		}, 100);
 	}, []);
 
-	function renderSumbitionConfirmation() {}
+	function renderSubmitionConfirmation(type) {
+		if (type === "success") {
+			emailConfirmationRef.current.innerHTML = "Message sent successfully!";
+			emailConfirmationRef.current.style.backgroundColor = "rgb(4, 187, 50)";
+		} else if ("invalid") {
+			emailConfirmationRef.current.style.backgroundColor = "#e74c3c";
+			emailConfirmationRef.current.innerHTML = "Invalid Form Validation";
+		}
+		emailConfirmationRef.current.style.opacity = 1;
+		emailConfirmationRef.current.style.top = "20px";
+		setTimeout(() => {
+			emailConfirmationRef.current.style.top = "0px";
+		}, 200);
 
-	function sendEmail() {}
+		setTimeout(() => {
+			emailConfirmationRef.current.style.opacity = 0;
+			emailConfirmationRef.current.style.top = "-30px";
+		}, 1500);
+	}
+
+	function sendEmail() {
+		let emailInput = document.getElementById(styles.emailInput);
+		let nameInput = document.getElementById(styles.nameInput);
+		let theMessageInput = document.getElementById(styles.messageInput);
+
+		if (
+			emailInput.value.length > 0 &&
+			nameInput.value.length > 0 &&
+			theMessageInput.value.length > 0
+		) {
+			renderSubmitionConfirmation("success");
+		} else {
+			renderSubmitionConfirmation("invalid");
+		}
+	}
 
 	return (
 		<>
@@ -94,6 +127,9 @@ const EmailForm = (props) => {
 				<button className={styles.submitButton} onClick={sendEmail}>
 					SUBMIT
 				</button>
+				<div className={styles.messageConfirmation} ref={emailConfirmationRef}>
+					<span>Message Sent!</span>
+				</div>
 			</div>
 		</>
 	);
