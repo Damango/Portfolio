@@ -7,6 +7,7 @@ import axios from "axios";
 import uiLibraryImage from "../../src/media/uilibrarybackground.png";
 import pcbuilderImage from "../../src/media/pcbuilderbackground.png";
 import valorantTrackerImage from "../../src/media/valoranttrackerbackground.png";
+import projectManagerImage from "../../src/media/projectmanagerbackground.png";
 
 //Components Imports
 import EmailPopUp from "../../src/components/EmailPopUp/EmailPopUp";
@@ -58,7 +59,7 @@ const Porfolio = () => {
 		{
 			projectName: "Project Manager",
 			projectTechnologies: ["react", "javascript"],
-			imageURL: pcbuilderImage,
+			imageURL: projectManagerImage,
 			webURL: "https://determined-northcutt-13b391.netlify.app/",
 			id: "15f5t",
 			description:
