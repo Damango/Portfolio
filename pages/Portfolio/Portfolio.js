@@ -46,7 +46,7 @@ const Porfolio = () => {
 			webURL: "https://silly-varahamihira-e8e082.netlify.app/",
 
 			description:
-				"A newly design PC Part Picker clone where users can select parts to put together a PC and get a rough estimate of what the actual build might cost.",
+				"A clone of Valorant Stat tracker similair to stat tracking website like op.gg. Containing randomly generated data and displays the match results and a data driven and valuable way.",
 		},
 		{
 			projectName: "PC Builder",
@@ -54,7 +54,7 @@ const Porfolio = () => {
 			imageURL: pcbuilderImage,
 			webURL: "https://hopeful-gates-9cc444.netlify.app/",
 			description:
-				"A clone of Valorant Stat tracker similair to stat tracking website like op.gg. Containing randomly generated data and displays the match results and a data driven and valuable way.",
+				"A newly design PC Part Picker clone where users can select parts to put together a PC and get a rough estimate of what the actual build might cost.",
 		},
 		{
 			projectName: "Project Manager",
@@ -63,7 +63,7 @@ const Porfolio = () => {
 			webURL: "https://determined-northcutt-13b391.netlify.app/",
 			id: "15f5t",
 			description:
-				"A clone of Valorant Stat tracker similair to stat tracking website like op.gg. Containing randomly generated data and displays the match results and a data driven and valuable way.",
+				"A project manager clone where users can create projects and complete tasks within them.",
 		},
 	];
 
