@@ -26,18 +26,6 @@ import { faKeyboard } from "@fortawesome/free-solid-svg-icons";
 const Porfolio = () => {
 	const portfolioData = [
 		{
-			projectName: "UI Library",
-
-			id: "12f56",
-
-			projectTechnologies: ["javascript", "react", "nextjs"],
-			imageURL: uiLibraryImage,
-			webURL: "https://condescending-nobel-1601c9.netlify.app/",
-
-			description:
-				"A UI Library containing custom React components I have made. Components have interactive previews and documentation for usage and properties.",
-		},
-		{
 			projectName: "Valorant Stat Tracker",
 			projectTechnologies: ["javascript", "react"],
 			imageURL: valorantTrackerImage,
@@ -47,6 +35,18 @@ const Porfolio = () => {
 
 			description:
 				"A clone of Valorant Stat tracker similair to stat tracking website like op.gg. Containing randomly generated data and displays the match results and a data driven and valuable way.",
+		},
+		{
+			projectName: "UI Library",
+
+			id: "12f56",
+
+			projectTechnologies: ["javascript", "react"],
+			imageURL: uiLibraryImage,
+			webURL: "https://condescending-nobel-1601c9.netlify.app/",
+
+			description:
+				"A UI Library containing custom React components I have made. Components have interactive previews and documentation for usage and properties.",
 		},
 		{
 			projectName: "PC Builder",
