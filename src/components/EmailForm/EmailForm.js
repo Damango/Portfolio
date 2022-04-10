@@ -58,17 +58,17 @@ const EmailForm = (props) => {
 			emailConfirmationRef.current.style.backgroundColor = "rgb(4, 187, 50)";
 		} else if ("invalid") {
 			emailConfirmationRef.current.style.backgroundColor = "#e74c3c";
-			emailConfirmationRef.current.innerHTML = "Invalid Form Validation";
+			emailConfirmationRef.current.innerHTML = "Invalid Form Submission";
 		}
 		emailConfirmationRef.current.style.opacity = 1;
-		emailConfirmationRef.current.style.top = "20px";
+		emailConfirmationRef.current.style.bottom = "5px";
 		setTimeout(() => {
-			emailConfirmationRef.current.style.top = "0px";
+			emailConfirmationRef.current.style.bottom = "10px";
 		}, 200);
 
 		setTimeout(() => {
 			emailConfirmationRef.current.style.opacity = 0;
-			emailConfirmationRef.current.style.top = "-30px";
+			emailConfirmationRef.current.style.bottom = "100px";
 		}, 1500);
 	}
 

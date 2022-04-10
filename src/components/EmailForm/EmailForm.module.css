@@ -99,7 +99,8 @@
 	position: relative;
 	left: 50%;
 	opacity: 0;
-	top: 30px;
+
+	bottom: 100px;
 	transform: translateX(-50%);
 	padding: 10px;
 	font-family: "Inter";
@@ -131,10 +132,10 @@
 @media only screen and (max-width: 700px) {
 	.emailFormContainer {
 		width: 90%;
-		height: 80%;
+		height: 70%;
 	}
 
-	.messageInput {
+	#messageInput {
 		height: 120px;
 	}
 
