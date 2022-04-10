@@ -114,25 +114,22 @@
 	transition: 0.2s;
 }
 
-@media only screen and (max-width: 700px) {
-	.emailFormContainer {
-		width: 80%;
-		height: 90%;
-	}
-
-	.inputHeader {
-		font-size: 18px;
-	}
-
-	.formInput {
-		font-size: 16px;
-	}
+@media only screen and (max-width: 800px) {
 }
 
 @media only screen and (max-width: 700px) {
 	.emailFormContainer {
-		width: 90%;
-		height: 70%;
+		width: 85%;
+		height: 78%;
+	}
+
+	.inputHeader {
+		font-size: 18px;
+		margin-bottom: 10px;
+	}
+
+	.formInput {
+		font-size: 16px;
 	}
 
 	#messageInput {
@@ -141,5 +138,9 @@
 
 	.messageConfirmation {
 		font-size: 17px;
+	}
+
+	.submitButton {
+		font-size: 22px;
 	}
 }
