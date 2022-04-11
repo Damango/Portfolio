@@ -34,7 +34,7 @@ const Porfolio = () => {
 			webURL: "https://silly-varahamihira-e8e082.netlify.app/",
 
 			description:
-				"A clone of Valorant Stat tracker similair to stat tracking website like op.gg. Containing randomly generated data and displays the match results and a data driven and valuable way.",
+				"A web app that generates the same data that the Riot API would send as a response. Analyzing and displaying the  player data.",
 		},
 		{
 			projectName: "UI Library",
@@ -54,7 +54,7 @@ const Porfolio = () => {
 			imageURL: pcbuilderImage,
 			webURL: "https://hopeful-gates-9cc444.netlify.app/",
 			description:
-				"A newly design PC Part Picker clone where users can select parts to put together a PC and get a rough estimate of what the actual build might cost.",
+				"A newly designed PC Part Picker clone where users can select parts to put together a PC and get a rough estimate of what the actual build might cost.",
 		},
 		{
 			projectName: "Project Manager",
